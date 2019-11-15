@@ -41,6 +41,9 @@ function draw() {
   // upgrade count
   drillElem.innerText = clickUpgrades.drills.quantity;
   roverElem.innerText = automaticUpgrades.rovers.quantity;
+  // upgrade buttons
+  let drillBtn = document.querySelector("#drill-button");
+  let roverBtn = document.querySelector("#rover-button");
 }
 
 // click event
@@ -72,7 +75,6 @@ function buyDrill() {
     clickUpgrades.drills.quantity++;
     cheese -= clickUpgrades.drills.price;
     manualMultiplier += clickUpgrades.drills.multiplier;
-    automaticUpgrades.drills.price * 1.5;
     console.log("puchased");
     draw();
   }
@@ -84,7 +86,6 @@ function buyRover() {
     automaticUpgrades.rovers.quantity++;
     cheese -= automaticUpgrades.rovers.price;
     automaticMultiplier += automaticUpgrades.rovers.multiplier;
-    automaticUpgrades.rovers.price * 1.5;
     console.log("puchased");
     draw();
   }
