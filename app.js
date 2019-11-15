@@ -72,6 +72,7 @@ function buyDrill() {
     clickUpgrades.drills.quantity++;
     cheese -= clickUpgrades.drills.price;
     manualMultiplier += clickUpgrades.drills.multiplier;
+    automaticUpgrades.drills.price * 1.5;
     console.log("puchased");
     draw();
   }
@@ -83,6 +84,7 @@ function buyRover() {
     automaticUpgrades.rovers.quantity++;
     cheese -= automaticUpgrades.rovers.price;
     automaticMultiplier += automaticUpgrades.rovers.multiplier;
+    automaticUpgrades.rovers.price * 1.5;
     console.log("puchased");
     draw();
   }
@@ -90,3 +92,4 @@ function buyRover() {
 
 // NOTE start automatic interval
 startInterval();
+draw();
