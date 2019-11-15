@@ -14,7 +14,40 @@
     <title>Moon Miner</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <h3>Cheese: <span id="cheese-count"></span></h3>
+          </div>
+          <div class="col-6"><h1>Moon Miner</h1></div>
+          <div class="col-3">
+            <h3>Manual Mining Power: <span id="manual-multi-count"></span></h3>
+            <h3>
+              Automatic Mining Power: <span id="automatic-multi-count"></span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <img src="//placehold.it/300x300" onclick="mine()" alt="The Moon" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h4>Drill: <span id="drill-count"></span></h4>
+          </div>
+          <div class="col-6">
+            <h4>Rover: <span id="rover-count"></span></h4>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
     <script src="app.js"></script>
   </body>
 </html>
