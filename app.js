@@ -65,13 +65,19 @@ function draw() {
   cheeseElem.innerText = cheese;
   manualElem.innerText = manualMultiplier;
   automaticElem.innerText = automaticMultiplier;
+
   // upgrade count
   pickaxeElem.innerText = clickUpgrades.pickaxes.quantity;
   drillElem.innerText = clickUpgrades.drills.quantity;
   cartElem.innerText = automaticUpgrades.carts.quantity;
   roverElem.innerText = automaticUpgrades.rovers.quantity;
+
   // upgrade price
   pickaxePriceElem.innerText = clickUpgrades.pickaxes.price;
+  drillPriceElem.innerText = clickUpgrades.drills.price;
+  cartPriceElem.innerText = automaticUpgrades.carts.price;
+  roverPriceElem.innerText = automaticUpgrades.rovers.price;
+
   // upgrade buttons
   if (cheese < clickUpgrades.pickaxes.price) {
     pickaxeBtn.setAttribute("disabled", "true");
@@ -171,7 +177,7 @@ function buyRover() {
 startInterval();
 draw();
 
-// NOTE dev tools
+// NOTE cheat  codes
 
 function cheeseIt() {
   cheese += 9999;

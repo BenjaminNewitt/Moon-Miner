@@ -20,15 +20,17 @@
   <body>
     <header>
       <div class="container-fluid">
-        <div class="row d-flex justify-content-center text-center">
-          <div class="col-3">
-            <p class="mb-0">Cheese</p>
-            <p><span id="cheese-count">0</span></p>
+        <div class="row d-flex justify-content-center">
+          <div class="col-3 mt-4 text-right">
+            <h4 class="mb-0">Cheese</h4>
+            <h4><span id="cheese-count">0</span></h4>
           </div>
-          <div class="col-6"><h1>Moon Miner</h1></div>
-          <div class="col-3 text-left">
-            <p>Manual Mining Power: <span id="manual-multi-count">0</span></p>
-            <p>Auto Mining Power: <span id="automatic-multi-count">0</span></p>
+          <div class="col-6 text-center"><h1>Moon Miner</h1></div>
+          <div class="col-3 text-left mt-4">
+            <p>Manual Power</p>
+            <p><span id="manual-multi-count">0</span></p>
+            <p>Auto Power</p>
+            <p><span id="automatic-multi-count">0</span></p>
           </div>
         </div>
       </div>
@@ -46,7 +48,7 @@
             </button>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center text-center">
           <div class="col-6">
             <p>Pickaxe</p>
             <button
@@ -60,38 +62,42 @@
 
             <p>In Inventory: <span id="pickaxe-count">0</span></p>
 
-            <p>
-              Drill
-              <button
-                class="btn btn-outline-light"
-                onclick="buyDrill()"
-                id="drill-button"
-              >
-                Buy</button
-              ><span id="drill-count">0</span>
-            </p>
+            <p>Dril</p>
+            <button
+              class="btn btn-outline-light"
+              onclick="buyDrill()"
+              id="drill-button"
+            >
+              Buy
+            </button>
+            <p>Price: <span id="drill-price">0</span></p>
+
+            <p>In Inventory: <span id="drill-count">0</span></p>
           </div>
           <div class="col-6">
-            <p>
-              Cart
-              <button
-                class="btn btn-outline-light"
-                onclick="buyCart()"
-                id="cart-button"
-              >
-                Buy Cart</button
-              ><span id="cart-count">0</span>
-            </p>
-            <p>
-              Rover
-              <button
-                class="btn btn-outline-light"
-                onclick="buyRover()"
-                id="rover-button"
-              >
-                Buy</button
-              ><span id="rover-count">0</span>
-            </p>
+            <p>Cart</p>
+            <button
+              class="btn btn-outline-light"
+              onclick="buyCart()"
+              id="cart-button"
+            >
+              Buy
+            </button>
+            <p>Price: <span id="cart-price">0</span></p>
+
+            <p>In Inventory: <span id="cart-count">0</span></p>
+
+            <p>Rover</p>
+            <button
+              class="btn btn-outline-light"
+              onclick="buyRover()"
+              id="rover-button"
+            >
+              Buy
+            </button>
+            <p>Price: <span id="rover-price">0</span></p>
+
+            <p>In Inventory: <span id="rover-count">0</span></p>
           </div>
         </div>
       </div>
