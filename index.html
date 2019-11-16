@@ -40,7 +40,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-12 text-center">
             <button
-              class="btn btn-outline-dark"
+              class="btn btn-outline-dark mt-3 mb-3"
               id="cheese-button"
               onclick="mine()"
             >
@@ -53,7 +53,7 @@
             <p>Pickaxe</p>
             <button
               class="btn btn-outline-light"
-              onclick="buyPickaxe()"
+              onclick="buyManualUpgrade('pickaxes')"
               id="pickaxe-button"
             >
               Buy
@@ -62,10 +62,10 @@
 
             <p>In Inventory: <span id="pickaxe-count">0</span></p>
 
-            <p>Dril</p>
+            <p>Drill</p>
             <button
               class="btn btn-outline-light"
-              onclick="buyDrill()"
+              onclick="buyManualUpgrade('drills')"
               id="drill-button"
             >
               Buy
@@ -78,7 +78,7 @@
             <p>Cart</p>
             <button
               class="btn btn-outline-light"
-              onclick="buyCart()"
+              onclick="buyAutomaticUpgrade('carts')"
               id="cart-button"
             >
               Buy
@@ -90,7 +90,7 @@
             <p>Rover</p>
             <button
               class="btn btn-outline-light"
-              onclick="buyRover()"
+              onclick="buyAutomaticUpgrade('rovers')"
               id="rover-button"
             >
               Buy

@@ -124,51 +124,28 @@ function startInterval() {
 // NOTE purchase methods
 
 // manual upgrades
-function buyPickaxe() {
-  if (cheese >= clickUpgrades.pickaxes.price) {
-    clickUpgrades.pickaxes.quantity++;
-    cheese -= clickUpgrades.pickaxes.price;
-    manualMultiplier += clickUpgrades.pickaxes.multiplier;
-    clickUpgrades.pickaxes.price = Math.floor(
-      (clickUpgrades.pickaxes.price *= 1.05)
-    );
-    draw();
-  }
-}
-
-function buyDrill() {
-  if (cheese >= clickUpgrades.drills.price) {
-    clickUpgrades.drills.quantity++;
-    cheese -= clickUpgrades.drills.price;
-    manualMultiplier += clickUpgrades.drills.multiplier;
-    clickUpgrades.drills.price = Math.floor(
-      (clickUpgrades.drills.price *= 1.05)
-    );
+function buyManualUpgrade(upgradeName) {
+  let clickUpgrade = clickUpgrades[upgradeName];
+  console.log(clickUpgrade);
+  if (cheese >= clickUpgrade.price) {
+    clickUpgrade.quantity++;
+    cheese -= clickUpgrade.price;
+    manualMultiplier += clickUpgrade.multiplier;
+    clickUpgrade.price = Math.floor((clickUpgrade.price *= 1.05));
     draw();
   }
 }
 
 // automatic upgrades
-function buyCart() {
-  if (cheese >= automaticUpgrades.carts.price) {
-    automaticUpgrades.carts.quantity++;
-    cheese -= automaticUpgrades.carts.price;
-    automaticMultiplier += automaticUpgrades.carts.multiplier;
-    automaticUpgrades.carts.price = Math.floor(
-      (automaticUpgrades.carts.price *= 1.05)
-    );
-    draw();
-  }
-}
 
-function buyRover() {
-  if (cheese >= automaticUpgrades.rovers.price) {
-    automaticUpgrades.rovers.quantity++;
-    cheese -= automaticUpgrades.rovers.price;
-    automaticMultiplier += automaticUpgrades.rovers.multiplier;
-    automaticUpgrades.rovers.price = Math.floor(
-      (automaticUpgrades.rovers.price *= 1.05)
-    );
+function buyAutomaticUpgrades(upgradeName) {
+  let autoUpgrade = automaticUpgrades[upgradeName];
+  console.log(autoUpgrade);
+  if (cheese >= autoUpgrade.price) {
+    autoUpgrade.quantity++;
+    cheese -= autoUpgrade.price;
+    manualMultiplier += autoUpgrade.multiplier;
+    autoUpgrade.price = Math.floor((autoUpgrade.price *= 1.05));
     draw();
   }
 }
