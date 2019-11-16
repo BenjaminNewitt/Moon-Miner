@@ -44,6 +44,13 @@ let roverElem = document.querySelector("#rover-count");
 let manualElem = document.querySelector("#manual-multi-count");
 let automaticElem = document.querySelector("#automatic-multi-count");
 
+// prices
+let pickaxePriceElem = document.querySelector("#pickaxe-price");
+let drillPriceElem = document.querySelector("#drill-price");
+let cartPriceElem = document.querySelector("#cart-price");
+let roverPriceElem = document.querySelector("#rover-price");
+
+// buttons
 let cheeseBtn = document.querySelector("#cheese-button");
 let pickaxeBtn = document.querySelector("#pickaxe-button");
 let drillBtn = document.querySelector("#drill-button");
@@ -63,6 +70,8 @@ function draw() {
   drillElem.innerText = clickUpgrades.drills.quantity;
   cartElem.innerText = automaticUpgrades.carts.quantity;
   roverElem.innerText = automaticUpgrades.rovers.quantity;
+  // upgrade price
+  pickaxePriceElem.innerText = clickUpgrades.pickaxes.price;
   // upgrade buttons
   if (cheese < clickUpgrades.pickaxes.price) {
     pickaxeBtn.setAttribute("disabled", "true");
