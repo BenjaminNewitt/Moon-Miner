@@ -1,4 +1,4 @@
-// NOTE objects
+// NOTE upgrades
 
 let clickUpgrades = {
   pickaxes: {
@@ -125,36 +125,37 @@ function startInterval() {
 
 // manual upgrades
 function buyManualUpgrade(upgradeName) {
+  // checks what onclick upgrade to purchase
   let clickUpgrade = clickUpgrades[upgradeName];
-  console.log(clickUpgrade);
   if (cheese >= clickUpgrade.price) {
     clickUpgrade.quantity++;
     cheese -= clickUpgrade.price;
     manualMultiplier += clickUpgrade.multiplier;
+    // increase price
     clickUpgrade.price = Math.floor((clickUpgrade.price *= 1.05));
     draw();
   }
 }
 
 // automatic upgrades
-
 function buyAutomaticUpgrades(upgradeName) {
+  // checks what automatic upgrade to purchase
   let autoUpgrade = automaticUpgrades[upgradeName];
-  console.log(autoUpgrade);
   if (cheese >= autoUpgrade.price) {
     autoUpgrade.quantity++;
     cheese -= autoUpgrade.price;
     manualMultiplier += autoUpgrade.multiplier;
+    // increase price
     autoUpgrade.price = Math.floor((autoUpgrade.price *= 1.05));
     draw();
   }
 }
 
-// NOTE start automatic interval
+// NOTE start interval
 startInterval();
 draw();
 
-// NOTE cheat  codes
+// NOTE cheat codes
 
 function cheeseIt() {
   cheese += 9999;
