@@ -34,17 +34,27 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <img src="//placehold.it/300x300" onclick="mine()" alt="The Moon" />
+            <button id="cheese-button" onclick="mine()">
+              <img src="//placehold.it/200x200" alt="The Moon" />
+            </button>
           </div>
         </div>
         <div class="row">
           <div class="col-6">
+            <h4>
+              <button onclick="buyPickaxe()" id="pickaxe-button">Pickaxe</button
+              ><span id="pickaxe-count">0</span>
+            </h4>
             <h4>
               <button onclick="buyDrill()" id="drill-button">Drill</button
               ><span id="drill-count">0</span>
             </h4>
           </div>
           <div class="col-6">
+            <h4>
+              <button onclick="buyCart()" id="cart-button">Cart</button
+              ><span id="cart-count">0</span>
+            </h4>
             <h4>
               <button onclick="buyRover()" id="rover-button">Rover</button
               ><span id="rover-count">0</span>
