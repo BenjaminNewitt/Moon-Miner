@@ -10,21 +10,21 @@ let clickUpgrades = {
   drills: {
     price: 100,
     quantity: 0,
-    multiplier: 3
+    multiplier: 4
   }
 };
 
 let automaticUpgrades = {
   carts: {
-    price: 300,
-    quantity: 0,
-    multiplier: 25
-  },
-
-  rovers: {
     price: 500,
     quantity: 0,
     multiplier: 50
+  },
+
+  rovers: {
+    price: 1000,
+    quantity: 0,
+    multiplier: 150
   }
 };
 
@@ -81,14 +81,7 @@ function draw() {
   roverPriceElem.innerText = automaticUpgrades.rovers.price;
 
   // mine cooldown
-  if (onCooldown == true) {
-    cheeseBtn.setAttribute("disabled", "true");
-    setTimeout(() => {
-      cooldown();
-    }, 250);
-  } else {
-    cheeseBtn.removeAttribute("disabled");
-  }
+
   // upgrade buttons
   if (cheese < clickUpgrades.pickaxes.price) {
     pickaxeBtn.setAttribute("disabled", "true");
@@ -112,19 +105,28 @@ function draw() {
   }
 }
 
+// cooldown
+
+function coolOff() {
+  cheeseBtn.setAttribute("disabled", "true");
+  setTimeout(() => {
+    cooldown();
+  }, 250);
+  cheeseBtn.removeAttribute("disabled");
+}
+
+function cooldown() {
+  onCooldown = false;
+  draw();
+}
+
 // click event
 function mine() {
   if (onCooldown == false) {
     cheese += manualMultiplier;
     onCooldown = true;
-    draw();
+    coolOff();
   }
-}
-
-// mining cooldown
-
-function cooldown() {
-  onCooldown = false;
   draw();
 }
 
@@ -153,7 +155,7 @@ function buyManualUpgrade(upgradeName) {
     cheese -= clickUpgrade.price;
     manualMultiplier += clickUpgrade.multiplier;
     // increase price
-    clickUpgrade.price = Math.floor((clickUpgrade.price *= 1.05));
+    clickUpgrade.price = Math.floor((clickUpgrade.price *= 1.25));
     draw();
   }
 }
@@ -167,7 +169,7 @@ function buyAutomaticUpgrade(upgradeName) {
     cheese -= autoUpgrade.price;
     automaticMultiplier += autoUpgrade.multiplier;
     // increase price
-    autoUpgrade.price = Math.floor((autoUpgrade.price *= 1.05));
+    autoUpgrade.price = Math.floor((autoUpgrade.price *= 1.1));
     draw();
   }
 }
