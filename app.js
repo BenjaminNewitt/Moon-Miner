@@ -2,13 +2,13 @@
 
 let clickUpgrades = {
   pickaxes: {
-    price: 100,
+    price: 50,
     quantity: 0,
     multiplier: 1
   },
 
   drills: {
-    price: 250,
+    price: 100,
     quantity: 0,
     multiplier: 3
   }
@@ -16,13 +16,13 @@ let clickUpgrades = {
 
 let automaticUpgrades = {
   carts: {
-    price: 600,
+    price: 300,
     quantity: 0,
     multiplier: 25
   },
 
   rovers: {
-    price: 1000,
+    price: 500,
     quantity: 0,
     multiplier: 50
   }
@@ -117,7 +117,6 @@ function mine() {
   if (onCooldown == false) {
     cheese += manualMultiplier;
     onCooldown = true;
-    console.log(onCooldown);
     draw();
   }
 }
@@ -126,7 +125,6 @@ function mine() {
 
 function cooldown() {
   onCooldown = false;
-  console.log(onCooldown);
   draw();
 }
 
@@ -180,7 +178,9 @@ draw();
 
 // NOTE cheat codes
 
+// more cheese
 function cheeseIt() {
   cheese += 9999;
+  console.log("that's a really cheesy move!");
   draw();
 }
