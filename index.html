@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css?family=Kulim+Park|Lato&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Moon Miner</title>
   </head>
@@ -38,19 +42,19 @@
     <main>
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 text-center">
-            <button
-              class="btn btn-outline-dark mt-3 mb-3"
-              id="cheese-button"
-              onclick="mine()"
-            >
-              <img src="//placehold.it/200x200" alt="The Moon" />
-            </button>
+          <div class="col-12 text-center mt-3">
+            <img
+              src="//placehold.it/200x200"
+              id="moon"
+              class="img-fluid"
+              onclick="mine();"
+              alt="The Moon"
+            />
           </div>
         </div>
         <div class="row justify-content-center text-center">
           <div class="col-6">
-            <p>Pickaxe</p>
+            <p class="upgrade-title">Pickaxe</p>
             <button
               class="btn btn-outline-light"
               onclick="buyManualUpgrade('pickaxes')"
@@ -62,7 +66,7 @@
 
             <p>In Inventory: <span id="pickaxe-count">0</span></p>
 
-            <p>Drill</p>
+            <p class="upgrade-title">Drill</p>
             <button
               class="btn btn-outline-light"
               onclick="buyManualUpgrade('drills')"
@@ -75,7 +79,7 @@
             <p>In Inventory: <span id="drill-count">0</span></p>
           </div>
           <div class="col-6">
-            <p>Cart</p>
+            <p class="upgrade-title">Cart</p>
             <button
               class="btn btn-outline-light"
               onclick="buyAutomaticUpgrade('carts')"
@@ -87,7 +91,7 @@
 
             <p>In Inventory: <span id="cart-count">0</span></p>
 
-            <p>Rover</p>
+            <p class="upgrade-title">Rover</p>
             <button
               class="btn btn-outline-light"
               onclick="buyAutomaticUpgrade('rovers')"

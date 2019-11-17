@@ -31,6 +31,8 @@ let automaticUpgrades = {
 // NOTE variables
 let cheese = 0;
 
+let onCooldown = false;
+
 let manualMultiplier = 1;
 
 let automaticMultiplier = 0;
@@ -51,7 +53,7 @@ let cartPriceElem = document.querySelector("#cart-price");
 let roverPriceElem = document.querySelector("#rover-price");
 
 // buttons
-let cheeseBtn = document.querySelector("#cheese-button");
+let cheeseBtn = document.querySelector("#moon");
 let pickaxeBtn = document.querySelector("#pickaxe-button");
 let drillBtn = document.querySelector("#drill-button");
 let cartBtn = document.querySelector("#cart-button");
@@ -78,6 +80,15 @@ function draw() {
   cartPriceElem.innerText = automaticUpgrades.carts.price;
   roverPriceElem.innerText = automaticUpgrades.rovers.price;
 
+  // mine cooldown
+  if (onCooldown == true) {
+    cheeseBtn.setAttribute("disabled", "true");
+    setTimeout(() => {
+      cooldown();
+    }, 250);
+  } else {
+    cheeseBtn.removeAttribute("disabled");
+  }
   // upgrade buttons
   if (cheese < clickUpgrades.pickaxes.price) {
     pickaxeBtn.setAttribute("disabled", "true");
@@ -103,7 +114,19 @@ function draw() {
 
 // click event
 function mine() {
-  cheese += manualMultiplier;
+  if (onCooldown == false) {
+    cheese += manualMultiplier;
+    onCooldown = true;
+    console.log(onCooldown);
+    draw();
+  }
+}
+
+// mining cooldown
+
+function cooldown() {
+  onCooldown = false;
+  console.log(onCooldown);
   draw();
 }
 
@@ -138,13 +161,13 @@ function buyManualUpgrade(upgradeName) {
 }
 
 // automatic upgrades
-function buyAutomaticUpgrades(upgradeName) {
+function buyAutomaticUpgrade(upgradeName) {
   // checks what automatic upgrade to purchase
   let autoUpgrade = automaticUpgrades[upgradeName];
   if (cheese >= autoUpgrade.price) {
     autoUpgrade.quantity++;
     cheese -= autoUpgrade.price;
-    manualMultiplier += autoUpgrade.multiplier;
+    automaticMultiplier += autoUpgrade.multiplier;
     // increase price
     autoUpgrade.price = Math.floor((autoUpgrade.price *= 1.05));
     draw();

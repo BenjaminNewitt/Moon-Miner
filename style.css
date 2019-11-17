@@ -1,9 +1,9 @@
 body {
   background-color: black;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Tomorrow", sans-serif;
   font-size: 12px;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 h1 {
@@ -16,4 +16,12 @@ p {
 
 button {
   padding: 3px !important;
+}
+
+#moon {
+  border-radius: 50%;
+}
+
+.upgrade-title {
+  margin-top: 10px;
 }
