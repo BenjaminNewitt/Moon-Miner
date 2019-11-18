@@ -26,11 +26,13 @@ button {
   margin-top: 10px;
 }
 
-.bg {
+#bg {
   background-image: url(assets/bg.bmp);
   width: 100%;
   height: auto;
   margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .ui-bg {
