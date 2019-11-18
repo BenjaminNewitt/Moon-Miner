@@ -178,6 +178,14 @@ function buyAutomaticUpgrade(upgradeName) {
 startInterval();
 draw();
 
+var sound = new Howl({
+  src: ["assets/music.ogg"],
+  autoplay: true,
+  loop: true
+});
+
+sound.play();
+
 // NOTE cheat codes
 
 // more cheese
