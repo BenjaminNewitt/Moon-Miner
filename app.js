@@ -61,6 +61,17 @@ let roverBtn = document.querySelector("#rover-button");
 
 // NOTE functions
 
+// music
+var sound = new Howl({
+  src: ["assets/music.ogg"],
+  preload: true,
+  autoplay: true,
+  loop: true
+});
+
+// // mute
+// function mute() {}
+
 // update user screen
 function draw() {
   // meta data
@@ -176,15 +187,8 @@ function buyAutomaticUpgrade(upgradeName) {
 
 // NOTE start interval
 startInterval();
-draw();
-
-var sound = new Howl({
-  src: ["assets/music.ogg"],
-  autoplay: true,
-  loop: true
-});
-
 sound.play();
+draw();
 
 // NOTE cheat codes
 
