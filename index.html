@@ -24,7 +24,9 @@
   <body>
     <header>
       <div class="container-fluid">
-        <div class="row d-flex justify-content-center border rounded-bottom">
+        <div
+          class="row d-flex justify-content-center border rounded-bottom ui-bg"
+        >
           <div class="col-3 mt-4 text-right">
             <h4 class="mb-0">Cheese</h4>
             <h4><span id="cheese-count">0</span></h4>
@@ -39,9 +41,9 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="bg">
       <div class="container-fluid">
-        <div class="row d-flex justify-content-center" id="bg">
+        <div class="row d-flex justify-content-center">
           <div class="col-12 text-center mt-3">
             <img
               src="assets/moon.png"
@@ -52,63 +54,66 @@
             />
           </div>
         </div>
-        <div
-          class="row justify-content-center text-center border border-bottom-0 rounded-top"
-        >
-          <div class="col-6">
-            <p class="upgrade-title">Pickaxe</p>
-            <button
-              class="btn btn-outline-light"
-              onclick="buyManualUpgrade('pickaxes')"
-              id="pickaxe-button"
+        <div class="row justify-content-center justify-content-md-start">
+          <div class="col-12 col-md-6">
+            <div
+              class="row justify-content-center text-center border border-bottom-0 rounded-top ui-bg"
             >
-              Buy
-            </button>
-            <p>Price: <span id="pickaxe-price">0</span></p>
+              <div class="col-6 col-md-4">
+                <p class="upgrade-title">Pickaxe</p>
+                <button
+                  class="btn btn-outline-light"
+                  onclick="buyManualUpgrade('pickaxes')"
+                  id="pickaxe-button"
+                >
+                  Buy
+                </button>
+                <p>Price: <span id="pickaxe-price">0</span></p>
 
-            <p>In Inventory: <span id="pickaxe-count">0</span></p>
+                <p>In Inventory: <span id="pickaxe-count">0</span></p>
 
-            <p class="upgrade-title">Drill</p>
-            <button
-              class="btn btn-outline-light"
-              onclick="buyManualUpgrade('drills')"
-              id="drill-button"
-            >
-              Buy
-            </button>
-            <p>Price: <span id="drill-price">0</span></p>
+                <p class="upgrade-title">Drill</p>
+                <button
+                  class="btn btn-outline-light"
+                  onclick="buyManualUpgrade('drills')"
+                  id="drill-button"
+                >
+                  Buy
+                </button>
+                <p>Price: <span id="drill-price">0</span></p>
 
-            <p>In Inventory: <span id="drill-count">0</span></p>
-          </div>
-          <div class="col-6">
-            <p class="upgrade-title">Cart</p>
-            <button
-              class="btn btn-outline-light"
-              onclick="buyAutomaticUpgrade('carts')"
-              id="cart-button"
-            >
-              Buy
-            </button>
-            <p>Price: <span id="cart-price">0</span></p>
+                <p>In Inventory: <span id="drill-count">0</span></p>
+              </div>
+              <div class="col-6 col-md-4">
+                <p class="upgrade-title">Cart</p>
+                <button
+                  class="btn btn-outline-light"
+                  onclick="buyAutomaticUpgrade('carts')"
+                  id="cart-button"
+                >
+                  Buy
+                </button>
+                <p>Price: <span id="cart-price">0</span></p>
 
-            <p>In Inventory: <span id="cart-count">0</span></p>
+                <p>In Inventory: <span id="cart-count">0</span></p>
 
-            <p class="upgrade-title">Rover</p>
-            <button
-              class="btn btn-outline-light"
-              onclick="buyAutomaticUpgrade('rovers')"
-              id="rover-button"
-            >
-              Buy
-            </button>
-            <p>Price: <span id="rover-price">0</span></p>
+                <p class="upgrade-title">Rover</p>
+                <button
+                  class="btn btn-outline-light"
+                  onclick="buyAutomaticUpgrade('rovers')"
+                  id="rover-button"
+                >
+                  Buy
+                </button>
+                <p>Price: <span id="rover-price">0</span></p>
 
-            <p>In Inventory: <span id="rover-count">0</span></p>
+                <p>In Inventory: <span id="rover-count">0</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer></footer>
     <script src="app.js"></script>
   </body>
 </html>

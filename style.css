@@ -26,9 +26,13 @@ button {
   margin-top: 10px;
 }
 
-#bg {
+.bg {
   background-image: url(assets/bg.bmp);
-  max-width: 100%;
-  max-height: 50vh;
+  width: 100%;
+  height: auto;
   margin: 0;
+}
+
+.ui-bg {
+  background-color: black;
 }
