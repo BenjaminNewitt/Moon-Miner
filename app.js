@@ -58,7 +58,6 @@ let pickaxeBtn = document.querySelector("#pickaxe-button");
 let drillBtn = document.querySelector("#drill-button");
 let cartBtn = document.querySelector("#cart-button");
 let roverBtn = document.querySelector("#rover-button");
-let muteBtn = document.querySelector(".audio");
 
 // NOTE functions
 
@@ -71,12 +70,6 @@ var sound = new Howl({
 });
 
 // mute
-// function mute() {
-//   if (sound.mute == false) {
-//     sound.mute = true;
-//   }
-//   sound.mute = false;
-// }
 
 // update user screen
 function draw() {
@@ -97,7 +90,11 @@ function draw() {
   cartPriceElem.innerText = automaticUpgrades.carts.price;
   roverPriceElem.innerText = automaticUpgrades.rovers.price;
 
-  // mine cooldown
+  // // mute button
+  // if (sound.mute == true) {
+  //   muteBtn.innerHTML = <i class="fas fa-volume-mute" id="mute-button"></i>;
+  // }
+  // muteBtn.innerHTML = <i class="fas fa-volume-up" id="mute-button"></i>;
 
   // upgrade buttons
   if (cheese < clickUpgrades.pickaxes.price) {
