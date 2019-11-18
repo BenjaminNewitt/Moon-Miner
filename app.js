@@ -159,6 +159,7 @@ function collectAutoUpgrades() {
 
 function startInterval() {
   let collectionInterval = setInterval(collectAutoUpgrades, 3000);
+  draw();
 }
 
 // NOTE purchase methods
