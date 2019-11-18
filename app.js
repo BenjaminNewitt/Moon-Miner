@@ -58,6 +58,7 @@ let pickaxeBtn = document.querySelector("#pickaxe-button");
 let drillBtn = document.querySelector("#drill-button");
 let cartBtn = document.querySelector("#cart-button");
 let roverBtn = document.querySelector("#rover-button");
+let muteBtn = document.querySelector(".audio");
 
 // NOTE functions
 
@@ -69,8 +70,13 @@ var sound = new Howl({
   loop: true
 });
 
-// // mute
-// function mute() {}
+// mute
+// function mute() {
+//   if (sound.mute == false) {
+//     sound.mute = true;
+//   }
+//   sound.mute = false;
+// }
 
 // update user screen
 function draw() {
